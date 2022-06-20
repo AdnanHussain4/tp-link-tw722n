@@ -24,7 +24,15 @@
 
 first update & upgrade
 sudo apt-get dist-upgrade
-
+# reade it.......
+At first, open up your terminal and change it to root terminal.
+Then first of all make an update using, “sudo apt update” command to update all of the packages of your kali Linux machine.
+Then type, “sudo apt install dkms bc” command. We need this package for compiling the new driver for the Kali Linux machine and the TP-link adapter.
+Now we need to install the header files. So, type “sudo apt install linux-headers-$(uname -r)” and then enter. Then it will install all the header files.
+So, we need to blacklist all the drivers now. So, type, echo “blacklist 8188eu” >> “/etc/modprobe.d/Realtek.conf” and then enter.
+Then again type the same command but this time type r8188eu instead of 8188eu. Then hit enter.
+Now we need to remove the old module. So, type “rmod r8188eu.ko” .
+Now you have to reboot your terminal machine. So, type “sudo reboot”.
 
 # Howto build/install
 1. You will need to blacklist another driver in order to use this one.
